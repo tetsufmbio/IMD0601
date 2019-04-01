@@ -125,7 +125,21 @@ choose(r + n - 1, r)
 # que os TFs não se repetem?
 
 
-# 3) Considerando a questão anterior, quantas combinações possíveis
+# 3) Considerando a questão 2, qual a probabilidade de eu 
+# pegar uma combinação que possua o TF Sox2 na minha combinação?
+
+
+# 4) Considerando a questão 2, qual a probabilidade de eu 
+# pegar uma combinação que possua os TFs Sox2 e cMyc na minha
+# combinação?
+
+
+# 5) Considerando a questão 2, qual a probabilidade de eu 
+# pegar uma combinação que possua os TFs Sox2 ou cMyc na minha
+# combinação?
+
+
+# 6) Considerando a questão 2, quantas combinações possíveis
 # de TFs existem para um conjunto de 4 TFs, sabendo que a ordem não
 # importa e que os TFs podem se repetir?
 
