@@ -1,88 +1,125 @@
-# vetor numérico
-c(1,2,3,4)
+# Aula 03 - BioestatÃ­stica
 
-# vetor lógico
-c(TRUE, FALSE, NA)
+########################
 
-# vetor de caracteres
-c("My", "name", "is")
+# If e Else
 
-# ajuda
-?c
+a <- 300
+if( a >= 500 ) {
+  print("escopo 1")
+  
+} else if(a < 100) {
+  print("escopo 2")
+  
+} else {
+  print("escopo 3")
+  
+}
 
-# operações aritmética
-c(1.1, 9, 3.14)*2+100
+######
 
-# reciclagem
-c(1,2,3,4) + c(0,10)
+ifelse(variavel >= 500, 'executa essa tarefa se TRUE', 'executa outra se FALSE')
 
+######
 
-# sequencia de números
-1:20
-15:1
-seq(1,20, by=0.5)
-seq(5,10,length=30)
+ifelse(1:20 >= 10, 0, 10)
 
-# repetições de números
-rep(0, times=40)
-rep(c(0,1,2), times=10)
+######
 
-# tamanho do vetor
-length(rep(0, times=40))
+a <- 839
+c <- ifelse(a >= 10000, 'VALOR ALTO', ifelse(a < 10000 & a >= 1000, 'VALOR MEDIO', 'VALOR BAIXO'))
+c
 
-# juntar palavras
-paste(c("My", "code"), collapse = " ")
+########################
 
+# Functions
 
+func1 <- function(par1, par2){
+  # sequÃªncia de tarefas
+  result <- c(par1, par2)
+  return(result)
+}
+# chamada da funÃ§Ã£o
 
-# NA
-x <- c(44, NA, 5, NA)
-3 * x
-is.na(x) # mesmo que x == NA?
+func1("A","B")
 
-# NaN
-0 / 0
-Inf - Inf
+#####
 
-# subconjunto de vetores
-y <- rnorm(1000)
-z <- rep(NA, 1000)
-x <- sample(c(y, z), 100)
+montanha_russa <- function(palavra) {
+  retorno <- NULL
+  for(i in 1:nchar(palavra)) {
+    if(i %% 2 == 0) {
+      retorno <- paste0(retorno, tolower(substr(palavra, i, i)))
+    } else {
+      retorno <- paste0(retorno, toupper(substr(palavra, i, i)))
+    }
+  }
+  return(retorno)
+}
 
-x[1:10]
-x[c(3,5,7)]
-x[c(-3,-5,-7)]
-x[-c(3,5,7)]
-x[c(-3,5,7)]
-x[x > 0]
-x[is.na(x)]
-x[!is.na(x)]
+montanha_russa('teste de funÃ§Ã£o: letras maiÃºsculas e minÃºsculas')
 
-x[0]
-x[3000]
+####################
 
-# Nomeando os vetores
-vect <- c(140, -50, 20, -120, 240)
-days <- c("Monday","Tuesday","Wednesday","Thursday","Friday")
-names(vect) <- days
+# Matrix
 
-vect[2]
-vect["Tuesday"]
-vect[c(3,5)]
-vect[c("Wednesday","Friday")]
+m <- matrix(1:20, 4, 5)
+m
 
-vect <- c(foo = 11, bar = 2, norf = NA)
-vect["foo"]
+m <- c(1:20)
+dim(m) <- c(4,5)
+m
 
+# juntando matrizes pelas colunas
+cbind(m, m)
 
-# Exercício
+# juntando matrizes pelas linhas
+rbind(m, m)
+
+# adicionando rÃ³tulos nas colunas
+colnames(m) <- c("A","B","C","D","E")
+m
+
+# adicionando rÃ³tulos nas linhas
+rownames(m) <- c("a","b","c","d")
+m
+
+# acessando os dados
+m[1,2]  # linha 1, coluna 2
+m[1,]   # primeira linha
+m[,1]   # primeira coluna
+m[,1:3] # primeira a terceira coluna
+
+m["a","B"]
+m["a",]
+m[,"A"]
+m[,c("A","B","C")]
+col <- colnames(m)
+m[,col[1:3]]
+
+# juntando vetor de caracteres com matriz numÃ©rica
+patients <- c("Bill","Gina","Kelly","Sean")
+m2 <- cbind(patients,m)
+m2
+
+# Data.frame
+m2 <- data.frame(patients,m)
+m2
+class(m2)
+
+# acessando dados em Data.frame
+m2[2,3]  # segunda linha, terceira coluna
+m2[2,]   # segunda linha
+m2[,2]   # segunda coluna
+m2["a",] # primeira linha
+m2[,"A"] # segunda coluna
+
+m2$A     # coluna patients
+m2$B     # coluna B
+
+####################
+
+# Abrindo arquivos no R
+
 MyData <- read.csv(file="iris.data", sep=",", header=FALSE)
-cnames <- c("sepalL", "sepalW", "petalL", "petalW", "class")
-colnames(MyData) <- cnames
-
 class(MyData)
-dim(MyData)
-object.size(MyData)
-str(MyData)
-summary(MyData)
-sum(is.na(MyData))
