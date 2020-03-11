@@ -1,6 +1,6 @@
 # exemplos do Rbase Graphics
 
-plot(x = mtcars$speed, y = mtcars$dist, xlab = "Speed", ylab = "Stopping Distance", col = 2)
+plot(x = cars$speed, y = cars$dist, xlab = "Speed", ylab = "Stopping Distance", col = 2)
 
 boxplot(formula = mpg~cyl, data =mtcars)
 
