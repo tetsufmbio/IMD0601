@@ -1,3 +1,16 @@
+# exemplos do Rbase Graphics
+
+plot(x = mtcars$speed, y = mtcars$dist, xlab = "Speed", ylab = "Stopping Distance", col = 2)
+
+boxplot(formula = mpg~cyl, data =mtcars)
+
+hist(mtcars$mpg)
+ 
+# ggplot2
+
+library(tidyr)
+library(ggplot2)
+
 iris$Flower <- 1:nrow(iris)
 iris.wide <- gather(iris, part_measure, val, -Species, -Flower )
 iris.wide <- separate(iris.wide, part_measure, c("part","measure"))
