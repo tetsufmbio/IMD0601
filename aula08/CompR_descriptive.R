@@ -105,12 +105,12 @@ sd(Data$Fish, na.rm=TRUE)/mean(Data$Fish, na.rm=TRUE)*100
 
 # Função personalizada de medidas de tendência central e dispersão
 summary.list = function(x)list(
-     N.with.NA.removed= length(x[!is.na(x)]),
-     Count.of.NA= length(x[is.na(x)]),
-     Mean=mean(x, na.rm=TRUE),
-     Median=median(x, na.rm=TRUE),
-     Max.Min=range(x, na.rm=TRUE),
-     Range=max(Data$Fish, na.rm=TRUE) - min(Data$Fish, na.rm=TRUE),
+     N.with.NA.removed = length(x[!is.na(x)]),
+     Count.of.NA = length(x[is.na(x)]),
+     Mean = mean(x, na.rm=TRUE),
+     Median = median(x, na.rm=TRUE),
+     Max.Min = range(x, na.rm=TRUE),
+     Range = max(Data$Fish, na.rm=TRUE) - min(Data$Fish, na.rm=TRUE),
      Variance=var(x, na.rm=TRUE),
      Std.Dev=sd(x, na.rm=TRUE),
      Coeff.Variation.Prcnt=sd(x, na.rm=TRUE)/mean(x, na.rm=TRUE)*100,
